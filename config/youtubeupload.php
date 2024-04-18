@@ -7,5 +7,5 @@ return [
         'clientID' => env('YOUTUBE_CLIENT_ID'),
         'clientSecret' => env('YOUTUBE_CLIENT_SECRET'),
         'redirect' => env('YOUTUBE_REDIRECT'),
-    ]
+    ],
 ];
