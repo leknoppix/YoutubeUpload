@@ -3,8 +3,8 @@
 namespace Leknoppix\NewYoutube\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Leknoppix\NewYoutube\NewYoutubeServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

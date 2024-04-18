@@ -2,9 +2,9 @@
 
 namespace Leknoppix\NewYoutube;
 
+use Leknoppix\NewYoutube\Commands\NewYoutubeCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Leknoppix\NewYoutube\Commands\NewYoutubeCommand;
 
 class NewYoutubeServiceProvider extends PackageServiceProvider
 {
