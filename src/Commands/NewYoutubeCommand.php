@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Leknoppix\NewYoutube\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class NewYoutubeCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'newyoutube';
 
     public $description = 'My command';
 
