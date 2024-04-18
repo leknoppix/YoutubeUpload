@@ -1,6 +1,6 @@
 <?php
 
-namespace Leknoppix\NewYoutube\Database\Factories;
+namespace Leknoppix\YoutubeUpload\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

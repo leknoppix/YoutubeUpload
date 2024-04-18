@@ -1,12 +1,12 @@
 <?php
 
-namespace Leknoppix\NewYoutube\Commands;
+namespace Leknoppix\YoutubeUpload\Commands;
 
 use Illuminate\Console\Command;
 
-class NewYoutubeCommand extends Command
+class YoutubeUploadCommand extends Command
 {
-    public $signature = 'newyoutube';
+    public $signature = 'youtubeuploadcommand';
 
     public $description = 'My command';
 

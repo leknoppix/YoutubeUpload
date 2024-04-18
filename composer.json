@@ -1,12 +1,12 @@
 {
-    "name": "leknoppix/newyoutube",
+    "name": "leknoppix/youtubeupload",
     "description": "This is my package newyoutube",
     "keywords": [
         "leknoppix",
         "laravel",
-        "newyoutube"
+        "youtubeupload"
     ],
-    "homepage": "https://github.com/leknoppix/newyoutube",
+    "homepage": "https://github.com/leknoppix/YoutubeUpload",
     "license": "MIT",
     "authors": [
         {
@@ -38,19 +38,19 @@
     },
     "autoload": {
         "psr-4": {
-            "Leknoppix\\NewYoutube\\": "src/",
-            "Leknoppix\\NewYoutube\\Database\\Factories\\": "database/factories/"
+            "Leknoppix\\YoutubeUpload\\": "src/",
+            "Leknoppix\\YoutubeUpload\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Leknoppix\\NewYoutube\\Tests\\": "tests/",
+            "Leknoppix\\YoutubeUpload\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-newyoutube --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-youtubeupload --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
@@ -77,10 +77,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Leknoppix\\NewYoutube\\NewYoutubeServiceProvider"
+                "Leknoppix\\YoutubeUpload\\YoutubeUploadServiceProvider"
             ],
             "aliases": {
-                "NewYoutube": "Leknoppix\\NewYoutube\\Facades\\NewYoutube"
+                "NewYoutube": "Leknoppix\\YoutubeUpload\\Facades\\YoutubeUpload"
             }
         }
     },

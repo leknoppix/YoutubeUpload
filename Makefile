@@ -34,6 +34,10 @@ PHPQA_RUN = docker run --init --rm -v $(PWD):/project -w /project $(PHPQA)
 #--PHPUNIT---#
 PHPUNIT = ./vendor/bin/phpunit
 
+#--PEST---#
+PEST = ./vendor/bin/pest
+#------------#
+
 ## === 🎛️  LARAVEL  ===============================================
 laravel: # List  Laravel commands.
 	@php artisan
@@ -138,13 +142,21 @@ tests: ## Run tests.
 	$(PHPUNIT) --testdox
 .PHONY: tests
 
+testspest: ## Run tests.
+	$(PEST)
+.PHONY: testspest
+
 tests-coverage: ## Run tests with coverage.
 	XDEBUG_MODE=coverage $(PHPUNIT) --coverage-html storage/qa/coverage
 .PHONY: tests-coverage
+
+pest-coverage: ## Run tests with coverage.
+	XDEBUG_MODE=coverage $(PEST) --coverage-html storage/qa/coverage
+.PHONY: pest-coverage
 #---------------------------------------------#
 
 ## === ⭐  OTHERS =================================================
-before-commit: formatage analyse qa-cs-fixer qa-phpstan tests ## Run before commit.
+before-commit: formatage analyse qa-phpstan testspest ## Run before commit.
 .PHONY: before-commit
 
 first-install: composer-install npm-install npm-build laravel-start ## First install.
