@@ -1,4 +1,4 @@
-# [README en Français](README.MD)
+# [README en Français](README.md)
 
 # This is my package newyoutube
 
