@@ -1,12 +1,12 @@
 <?php
 
-namespace Leknoppix\NewYoutube;
+namespace Leknoppix\YoutubeUpload;
 
-use Leknoppix\NewYoutube\Commands\NewYoutubeCommand;
+use Leknoppix\YoutubeUpload\Commands\YoutubeUploadCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class NewYoutubeServiceProvider extends PackageServiceProvider
+class YoutubeUploadServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class NewYoutubeServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('newyoutube')
+            ->name('youtubeupload')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_newyoutube_table')
-            ->hasCommand(NewYoutubeCommand::class);
+            ->hasMigration('create_youtubeupload_table')
+            ->hasCommand(YoutubeUploadCommand::class);
     }
 }

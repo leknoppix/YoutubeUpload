@@ -1,6 +1,6 @@
 # [README in English](README-en.md)
 
-# Ceci est mon package newyoutube
+# YoutubeUpload: un plugin pour uploader des videos vers Youtube
 
 [![Dernière version sur Packagist](https://img.shields.io/packagist/v/leknoppix/newyoutube.svg?style=flat-square)](https://packagist.org/packages/leknoppix/newyoutube)
 [![Statut de l'action des tests GitHub](https://img.shields.io/github/actions/workflow/status/leknoppix/newyoutube/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/leknoppix/newyoutube/actions?query=workflow%3Arun-tests+branch%3Amain)
@@ -14,20 +14,20 @@ C'est ici que votre description devrait aller. Limitez-la à un paragraphe ou de
 Vous pouvez installer le package via Composer :
 
 ```bash
-composer require leknoppix/newyoutube
+composer require leknoppix/youtubeupload
 ```
 
 Vous pouvez publier et exécuter les migrations avec :
 
 ```bash
-php artisan vendor:publish --tag="newyoutube-migrations"
+php artisan vendor:publish --tag="youtubeupload-migrations"
 php artisan migrate
 ```
 
 Vous pouvez publier le fichier de configuration avec :
 
 ```bash
-php artisan vendor:publish --tag="newyoutube-config"
+php artisan vendor:publish --tag="youtubeupload-config"
 ```
 
 Voici le contenu du fichier de configuration publié :
@@ -40,14 +40,14 @@ return [
 Facultativement, vous pouvez publier les vues en utilisant:
 
 ```bash
-php artisan vendor:publish --tag="newyoutube-views"
+php artisan vendor:publish --tag="youtubeupload-views"
 ```
 
 ## Utilisation
 
 ```php
-$newYoutube = new Leknoppix\NewYoutube();
-echo $newYoutube->echoPhrase('Hello, Leknoppix!');
+$YoutubeUpload = new Leknoppix\YoutubeUpload();
+echo $YoutubeUpload->echoPhrase('Hello, Leknoppix!');
 ```
 
 ## Tests

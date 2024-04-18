@@ -14,20 +14,20 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require leknoppix/newyoutube
+composer require leknoppix/YoutubeUpload
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="newyoutube-migrations"
+php artisan vendor:publish --tag="youtubeupload-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="newyoutube-config"
+php artisan vendor:publish --tag="youtubeupload-config"
 ```
 
 This is the contents of the published config file:
@@ -40,14 +40,14 @@ return [
 Optionally, you can publish the views using
 
 ```bash
-php artisan vendor:publish --tag="newyoutube-views"
+php artisan vendor:publish --tag="youtubeupload-views"
 ```
 
 ## Usage
 
 ```php
-$newYoutube = new Leknoppix\NewYoutube();
-echo $newYoutube->echoPhrase('Hello, Leknoppix!');
+$YoutubeUpload = new Leknoppix\YoutubeUpload();
+echo $YoutubeUpload->echoPhrase('Hello, Leknoppix!');
 ```
 
 ## Testing
