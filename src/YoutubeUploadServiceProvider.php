@@ -8,6 +8,18 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class YoutubeUploadServiceProvider extends PackageServiceProvider
 {
+    public function boot(): void
+    {
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+    }
+
+    public function register()
+    {
+        $this->publishes([
+            __DIR__.'/../config/youtubeupload.php' => config_path('youtubeupload.php'),
+        ]);
+    }
+
     public function configurePackage(Package $package): void
     {
         /*
