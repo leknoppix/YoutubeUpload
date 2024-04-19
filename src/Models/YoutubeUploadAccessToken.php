@@ -12,6 +12,6 @@ class YoutubeUploadAccessToken extends Model
     protected $guarded = [
         'channel_id',
         'channel_name',
-        'access_token'
+        'access_token',
     ];
 }

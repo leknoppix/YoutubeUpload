@@ -23,8 +23,6 @@ class YoutubeUploadServiceProvider extends PackageServiceProvider
         ], 'youtubeupload-config');
     }
 
-
-
     public function configurePackage(Package $package): void
     {
         /*
