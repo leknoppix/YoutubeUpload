@@ -6,6 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Creates the 'youtubeupload_access_token' table in the database.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('youtubeupload_access_token', function (Blueprint $table) {
@@ -15,5 +20,15 @@ return new class extends Migration
             $table->string('access_token');
             $table->timestamps();
         });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('youtubeupload_access_token');
     }
 };
