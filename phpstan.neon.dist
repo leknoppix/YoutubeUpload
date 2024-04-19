@@ -2,7 +2,9 @@ includes:
     - phpstan-baseline.neon
 
 parameters:
-    level: 5
+    bootstrapFiles:
+        - vendor/autoload.php
+    level: 7
     paths:
         - src
         - config
@@ -11,4 +13,3 @@ parameters:
     checkOctaneCompatibility: true
     checkModelProperties: true
     checkMissingIterableValueType: false
-

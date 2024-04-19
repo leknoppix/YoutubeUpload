@@ -9,7 +9,9 @@ class YoutubeUploadAccessToken extends Model
 {
     use HasFactory;
 
-    protected $guarded = [
+    protected $guarded = [];
+
+    protected $fillable = [
         'channel_id',
         'channel_name',
         'access_token',
