@@ -14,11 +14,17 @@ grumphp:
         types:
           - 📦 NEW
           - 👌 IMPROVE
+          - 👌 REFRACTOR
           - 🐛 FIX
           - 📖 DOCS
           - 🚀 RELEASE
           - 🤖 TEST
           - ‼️ BREAKING
+          - 📦 FEAT
+          - 🤖 CHORE
+          - 🎡 CI
+          - ⚡️ PERF
+          - 💄 STYLE
         scopes: ~
         subject_pattern: >-
           ([a-zA-Zа-яА-Я0-9-_ #@'\/\"]+)
