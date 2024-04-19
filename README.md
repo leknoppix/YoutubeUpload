@@ -20,7 +20,7 @@ composer require leknoppix/youtubeupload
 Vous pouvez publier et exécuter les migrations avec :
 
 ```bash
-php artisan vendor:publish --tag="youtubeupload-migrations"
+php artisan vendor:publish --tag="youtubeupload"
 php artisan migrate
 ```
 
