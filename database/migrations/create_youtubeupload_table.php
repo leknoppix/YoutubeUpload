@@ -8,11 +8,11 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('youtubeupload_table', function (Blueprint $table) {
+        Schema::create('youtubeupload_access_token', function (Blueprint $table) {
             $table->id();
-
-            // add fields
-
+            $table->string('channel_name');
+            $table->string('channel_id');
+            $table->string('access_token');
             $table->timestamps();
         });
     }
