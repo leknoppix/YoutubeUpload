@@ -20,6 +20,7 @@ Ce guide explique comment obtenir une clé publique et des identifiants OAuth po
 ![Etape 1: créer un nouveau projet ou sélectionner un projet existant](imgs/0001_nouveau_projet.png)
 3. Si c'est un nouveau projet, donnez un nom à ce dernier puis Cliquez sur Créer
 ![Etape 2: Création du projet](imgs/0002_creation_projet.png)
+
 Attendez que le projet soit créer, cela peut prendre quelques minutes.
 
 ### <a id="step-2"></a>2. Activation de l'API YouTube
@@ -46,16 +47,27 @@ Attendez que le projet soit créer, cela peut prendre quelques minutes.
 ### <a id="step-4"></a>4. Configuration des identifiants OAuth
 
 1. Toujours dans la console Google Cloud, accédez à la section "Identifiants".
-2. Cliquez sur "Créer des identifiants" et sélectionnez "ID client OAuth".
-3. Choisissez le type d'application approprié (par exemple, "Application Web" pour une application web).
-4. Configurez les paramètres requis, tels que les URI de redirection autorisés.
-5. Une fois créés, notez votre ID client OAuth et votre secret client.
+2. Cliquez sur "ID client OAuth" puis sur "Configurer l'écran de consentement".
+![Etape 6: Configurer l'écran de consentement](imgs/0007_configurer_consentement.png)
+3. Sélectionnez "Externes" puis "créer".
+4. Complétez les informations sur l'application.
+![Etape 7](imgs/0008_application.png)
+5. Indiquez les noms des domaines valide. J'indique le ou les noms de domaine concernés. Vous pourrez les modifier tout au long de la durée de vie de votre application.
+
+![Etape 8](imgs/0009_domaine.png)
+6. Cliquez à nouveau sur "ID client OAuth".
+7. Choisissez le type d'application approprié (par exemple, "Application Web" pour une application web).
+![Etape 9: Création de l'application](imgs/0010_application_web.png)
+8. Configurez les paramètres requis, tels que les URI de redirection autorisés. (Vous pourrez les modifier tout au long de la durée de vie de votre application.) Puis validez.
+
+![Etape 10: Url autorisée](imgs/0010_url_autorisee.png)
+9. Une fois créés, notez votre ID client OAuth et votre secret client.
 
 
 
 ## Utilisation dans votre application
 
-Une fois que vous avez obtenu votre clé publique et vos identifiants OAuth, vous pouvez les utiliser dans votre application pour accéder à l'API Google, y compris l'API YouTube.Assurez-vous de suivre les bonnes pratiques en matière de sécurité et de gestion des clés d'API.
+Une fois que vous avez obtenu votre clé publique et vos identifiants OAuth, vous pouvez les utiliser dans votre application pour accéder à l'API Google, y compris l'API YouTube.
 Assurez-vous de suivre les bonnes pratiques en matière de sécurité et de gestion des clés d'API.
 Stocker ces diverses informations dans votre fichier .env .
 N'oubliez pas de consulter la documentation officielle de Google pour plus de détails et pour vous assurer de respecter les conditions d'utilisation des API Google.
