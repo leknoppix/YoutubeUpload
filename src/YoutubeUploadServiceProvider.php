@@ -32,9 +32,6 @@ class YoutubeUploadServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('youtubeupload')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_youtubeupload_table')
-            ->hasCommand(YoutubeUploadCommand::class);
+            ->hasViews();
     }
 }
