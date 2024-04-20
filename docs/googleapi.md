@@ -20,6 +20,7 @@ Ce guide explique comment obtenir une clé publique et des identifiants OAuth po
 ![Etape 1: créer un nouveau projet ou sélectionner un projet existant](imgs/0001_nouveau_projet.png)
 3. Si c'est un nouveau projet, donnez un nom à ce dernier puis Cliquez sur Créer
 ![Etape 2: Création du projet](imgs/0002_creation_projet.png)
+
 Attendez que le projet soit créer, cela peut prendre quelques minutes.
 
 ### <a id="step-2"></a>2. Activation de l'API YouTube
@@ -52,11 +53,13 @@ Attendez que le projet soit créer, cela peut prendre quelques minutes.
 4. Complétez les informations sur l'application.
 ![Etape 7](imgs/0008_application.png)
 5. Indiquez les noms des domaines valide. J'indique le ou les noms de domaine concernés. Vous pourrez les modifier tout au long de la durée de vie de votre application.
+
 ![Etape 8](imgs/0009_domaine.png)
 6. Cliquez à nouveau sur "ID client OAuth".
 7. Choisissez le type d'application approprié (par exemple, "Application Web" pour une application web).
 ![Etape 9: Création de l'application](imgs/0010_application_web.png)
-8. Configurez les paramètres requis, tels que les URI de redirection autorisés. (Vous pourrez les modifier tout au long de la durée de vie de votre application) Puis validez.
+8. Configurez les paramètres requis, tels que les URI de redirection autorisés. (Vous pourrez les modifier tout au long de la durée de vie de votre application.) Puis validez.
+
 ![Etape 10: Url autorisée](imgs/0010_url_autorisee.png)
 9. Une fois créés, notez votre ID client OAuth et votre secret client.
 
