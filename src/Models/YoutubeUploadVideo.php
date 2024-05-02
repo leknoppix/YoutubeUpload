@@ -9,6 +9,8 @@ class YoutubeUploadVideo extends Model
 {
     use HasFactory;
 
+    protected $table = 'youtubeupload_videos';
+
     protected $guarded = [];
 
     protected $fillable = [

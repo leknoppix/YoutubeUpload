@@ -38,7 +38,6 @@ test('Le modèle Vidéo peut être instancie avec tous les champs complétés', 
     $this->assertEquals(5, $video->validation_id);
 });
 
-
 test('Le modèle Vidéo peut être instancie avec tous des champs null', function () {
     /* Création d'une fausse chaine */
     $youtubeUploadAccessToken = new YoutubeUploadAccessToken();

@@ -28,7 +28,7 @@ class YoutubeUploadVideoFactory extends Factory
             'is_owner' => $this->faker->boolean,
             'videocategory_id' => $this->faker->randomNumber(),
             'user_id' => $this->faker->randomNumber(),
-            'validation_id'=> $this->faker->randomNumber()
+            'validation_id' => $this->faker->randomNumber(),
         ];
     }
 }

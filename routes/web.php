@@ -1,14 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Leknoppix\YoutubeUpload\Http\Controllers\YoutubeController;
 
 $prefix = config('youtubeupload.prefix');
 
 Route::group(['namespace' => 'Admin', 'prefix' => $prefix], function () {
     //Url de connexion à youtube
-    Route::get('/youtubeupload/index', function () {
-        echo 'Route qui listera les chaînes ayant un token (actif ou pas)';
-    });
+    Route::get('/youtubeupload/index', [YoutubeController::class, 'index'])->name('youtubeupload.index');
+    Route::get('/youtubeupload/callback', [YoutubeController::class, 'callback'])->name('youtubeupload.callback');
     Route::get('/youtubeupload/add', function () {
         echo 'Route qui permettra de créer une chaine';
     });
