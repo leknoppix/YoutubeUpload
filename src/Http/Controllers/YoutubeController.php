@@ -18,9 +18,8 @@ class YoutubeController
         return view('youtubeupload.auth.youtubelogin', ['channels' => $channels, 'link' => $link]);
     }
 
-    public function callback(Request $resquest)
+    public function callback(Request $resquest): void
     {
         //récupération du code d'authentification et création du formulaire d'enregistrement dans la bdd
-        dd($resquest->input());
     }
 }

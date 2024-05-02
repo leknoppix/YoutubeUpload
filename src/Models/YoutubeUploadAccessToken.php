@@ -22,34 +22,39 @@ class YoutubeUploadAccessToken extends Model
     ];
 
     /**
-     * Formatage de la date de création
+     * Get the formatted created_at timestamp.
      *
+     * @param  Carbon  $value
      * @return string
      */
-    public function FormattedCreatedAt()
+    public function getCreatedAtAttribute($value)
     {
-        $date = $this->created_at->format('U');
-        if (DB::getDriverName() == 'sqlite') {
-            $date = $date / 1000;
-        }
-        $date = Carbon::createFromTimestamp($date);
-
-        return $date->format('d-m-Y H:i:s');
+        return $this->formatTimestamp($value);
     }
 
     /**
-     * Formatage de la date de mise a jour
+     * Get the formatted updated_at timestamp.
      *
+     * @param  Carbon  $value
      * @return string
      */
-    public function FormattedUpdatedAt()
+    public function getUpdatedAtAttribute($value)
     {
-        $date = $this->updated_at->format('U');
-        if (DB::getDriverName() == 'sqlite') {
-            $date = $date / 1000;
-        }
-        $date = Carbon::createFromTimestamp($date);
+        return $this->formatTimestamp($value);
+    }
 
-        return $date->format('d-m-Y H:i:s');
+    /**
+     * Format the timestamp.
+     *
+     * @param  Carbon  $value
+     * @return string
+     */
+    private function formatTimestamp($value)
+    {
+        if (DB::getDriverName() === 'sqlite') {
+            return Carbon::createFromTimestampMs($value)->format('Y-m-d H:i:s');
+        } else {
+            return Carbon::createFromTimestamp($value)->format('Y-m-d H:i:s');
+        }
     }
 }

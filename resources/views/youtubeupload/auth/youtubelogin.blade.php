@@ -34,7 +34,7 @@
                     {{ $channel->channel_name }}
                 </td>
                 <td class="px-16 py-2">
-                    {{ $channel->FormattedUpdatedAt() }}
+                    {{ $channel->updated_at }}
                 </td>
                 <td class="px-16 py-2 flex justify-center gap-4">
                     <button onclick="alert('Liste des vidéos uploadées')" class="text-green-500 hover:text-green-700">

@@ -4,23 +4,23 @@ namespace Leknoppix\YoutubeUpload\Http\Controllers\Auth;
 
 class YoutubeConnexionController
 {
-    private $youtube_client_id;
+    private string $youtube_client_id;
 
-    private $youtube_secret_id;
+    private string $youtube_secret_id;
 
-    private $callback;
+    private string $callback;
 
-    private $scopes;
+    private array $scopes;
 
     public function __construct()
     {
-        $this->youtube_client_id = config(key: 'youtubeupload.clientID');
-        $this->youtube_secret_id = config(key: 'youtubeupload.clientSecret');
+        $this->youtube_client_id = is_string(config('youtubeupload.clientID')) ? config('youtubeupload.clientID') : '';
+        $this->youtube_secret_id = is_string(config('youtubeupload.clientSecret')) ? config('youtubeupload.clientSecret') : '';
         $this->callback = config('app.url').'/'.config('youtubeupload.prefix').config('youtubeupload.callback');
         $this->scopes = ['https://www.googleapis.com/auth/youtube'];
     }
 
-    public function connexion()
+    public function connexion(): string
     {
         $client = new \Google_Client();
         $client->setClientId($this->youtube_client_id);
