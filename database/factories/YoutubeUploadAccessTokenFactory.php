@@ -8,7 +8,7 @@ use Leknoppix\YoutubeUpload\Models\YoutubeUploadAccessToken;
 /**
  * @extends Factory<YoutubeUploadAccessToken>
  */
-class YoutubeUploadFactory extends Factory
+class YoutubeUploadAccessTokenFactory extends Factory
 {
     protected $model = YoutubeUploadAccessToken::class;
 

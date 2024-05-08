@@ -4,19 +4,20 @@ namespace Leknoppix\YoutubeUpload\Tests\Models;
 
 use Leknoppix\YoutubeUpload\Models\YoutubeUploadAccessToken;
 
-test('Le modèle peut être instancie', function () {
+test('Le modèle Access Token peut être instancie', function () {
+
     $youtubeUploadAccessToken = new YoutubeUploadAccessToken();
     $youtubeUploadAccessToken->channel_name = 'channel_name';
-    $youtubeUploadAccessToken->channel_id = 'uuid';
+    $youtubeUploadAccessToken->channel_id = '1';
     $youtubeUploadAccessToken->access_token = 'access_token';
 
     $this->assertInstanceOf(YoutubeUploadAccessToken::class, $youtubeUploadAccessToken);
     $this->assertEquals('channel_name', $youtubeUploadAccessToken->channel_name);
-    $this->assertEquals('uuid', $youtubeUploadAccessToken->channel_id);
+    $this->assertEquals('1', $youtubeUploadAccessToken->channel_id);
     $this->assertEquals('access_token', $youtubeUploadAccessToken->access_token);
 });
 
-test('Le modèle peut être instancie avec 2 chaines', function () {
+test('Le modèle Access Token peut être instancie avec 2 chaines', function () {
     $youtubeUploadAccessToken = new YoutubeUploadAccessToken();
     $youtubeUploadAccessToken->channel_name = 'channel_name';
     $youtubeUploadAccessToken->channel_id = 'uuid';
