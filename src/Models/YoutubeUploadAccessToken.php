@@ -5,7 +5,6 @@ namespace Leknoppix\YoutubeUpload\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 class YoutubeUploadAccessToken extends Model
 {
@@ -25,36 +24,19 @@ class YoutubeUploadAccessToken extends Model
      * Get the formatted created_at timestamp.
      *
      * @param  Carbon  $value
-     * @return string
      */
-    public function getCreatedAtAttribute($value)
+    public function getCreatedAtAttribute($value): string
     {
-        return $this->formatTimestamp($value);
+        return Carbon::parse($value)->format('d-m-Y H:i:s');
     }
 
     /**
      * Get the formatted updated_at timestamp.
      *
      * @param  Carbon  $value
-     * @return string
      */
-    public function getUpdatedAtAttribute($value)
+    public function getUpdatedAtAttribute($value): string
     {
-        return $this->formatTimestamp($value);
-    }
-
-    /**
-     * Format the timestamp.
-     *
-     * @param  Carbon  $value
-     * @return string
-     */
-    private function formatTimestamp($value)
-    {
-        if (DB::getDriverName() === 'sqlite') {
-            return Carbon::createFromTimestampMs($value)->format('Y-m-d H:i:s');
-        } else {
-            return Carbon::createFromTimestamp($value)->format('Y-m-d H:i:s');
-        }
+        return Carbon::parse($value)->format('d-m-Y H:i:s');
     }
 }

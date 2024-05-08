@@ -6,6 +6,8 @@
     <title>Youtube Upload : @yield('title')</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@heroicons/vue/solid@1.0.4"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="p-8 flex flex-col items-center">
     @yield('content')

@@ -25,6 +25,7 @@ class YoutubeUploadServiceProvider extends PackageServiceProvider
         ], 'youtubeupload-config');
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views'),
+            __DIR__.'/../resources/js' => resource_path('js'),
         ], 'youtubeupload-views');
     }
 
