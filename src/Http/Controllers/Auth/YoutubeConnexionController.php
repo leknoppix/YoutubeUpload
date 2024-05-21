@@ -13,6 +13,9 @@ class YoutubeConnexionController
 
     private string $callback;
 
+    /**
+     * @var array<int, string>
+     */
     private array $scopes;
 
     private Google_Client $client;
@@ -40,6 +43,11 @@ class YoutubeConnexionController
         return $this->client->createAuthUrl();
     }
 
+    /**
+     * @return array<string, int|string>
+     *
+     * @throws \Google\Service\Exception
+     */
     public function getInformation(string $code): array
     {
         $data = [];
@@ -52,6 +60,11 @@ class YoutubeConnexionController
         return $data;
     }
 
+    /**
+     * @return array<string, int|string>|null
+     *
+     * @throws \Google\Service\Exception
+     */
     public function getToken(string $code): ?array
     {
         /* old method depreciated */

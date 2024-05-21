@@ -16,6 +16,17 @@
                            value="{{ $channel->channel_name }}" required
                     >
                 </div>
+                <div class="mb-4">
+                    <span class="block text-gray-700 text-sm font-bold mb-2">Mettre en favoris?</span>
+                    <label class="inline-flex items-center space-x-2">
+                        <input type="radio" name="is_favorite" value="yes" class="text-green-500 focus:ring-green-500" {{ ($channel->is_favorite == "yes") ? 'checked' : '' }}>
+                        <span>Oui</span>
+                    </label>
+                    <label class="inline-flex items-center space-x-2 ml-4">
+                        <input type="radio" name="is_favorite" value="no" class="text-red-500 focus:ring-red-500" {{ ($channel->is_favorite == "no") ? 'checked' : '' }}>
+                        <span>Non</span>
+                    </label>
+                </div>
                 <div class="flex justify-center">
                     <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline">
                         Enregistrer

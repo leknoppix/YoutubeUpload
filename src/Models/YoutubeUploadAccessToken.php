@@ -8,16 +8,33 @@ use Illuminate\Database\Eloquent\Model;
 
 class YoutubeUploadAccessToken extends Model
 {
+    const IS_FAVORITE_YES = 'yes';
+
+    const IS_FAVORITE_NO = 'no';
+
     use HasFactory;
 
     protected $table = 'youtubeupload_access_token';
 
     protected $guarded = [];
 
+    protected string $is_favorite;
+
+    public function getIsFavoriteAttribute(): string
+    {
+        return $this->attributes['is_favorite'];
+    }
+
+    public function setIsFavoriteAttribute(string $value): void
+    {
+        $this->attributes['is_favorite'] = $value;
+    }
+
     protected $fillable = [
         'channel_id',
         'channel_name',
         'access_token',
+        'is_favorite',
     ];
 
     /**

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('channel_name');
             $table->string('channel_id');
             $table->string('access_token');
+            $table->enum('is_favorite', ['yes', 'no'])->default('non');
             $table->timestamps();
         });
     }
