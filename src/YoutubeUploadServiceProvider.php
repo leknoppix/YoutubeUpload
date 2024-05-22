@@ -18,6 +18,9 @@ class YoutubeUploadServiceProvider extends PackageServiceProvider
     public function register()
     {
         $this->publishes([
+            __DIR__.'/Commands' => base_path('app/Console/Commands'),
+        ], 'youtubeupload-commands');
+        $this->publishes([
             __DIR__.'/../database/migrations' => database_path('migrations'),
         ], 'youtubeupload-migrations');
         $this->publishes([

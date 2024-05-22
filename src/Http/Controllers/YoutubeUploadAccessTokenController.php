@@ -2,10 +2,13 @@
 
 namespace Leknoppix\YoutubeUpload\Http\Controllers;
 
+use Google\Service\Exception;
+use Google\Service\YouTube\ChannelListResponse;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Leknoppix\YoutubeUpload\Http\Controllers\Auth\YoutubeConnexionController;
+use Leknoppix\YoutubeUpload\Http\Controllers\Auth\YoutubeInfoController;
 use Leknoppix\YoutubeUpload\Http\Requests\YoutubeUploadAccessTokenRequest as YUATRAlias;
 use Leknoppix\YoutubeUpload\Models\YoutubeUploadAccessToken as YUATAlias;
 
@@ -57,7 +60,7 @@ class YoutubeUploadAccessTokenController
     public function update(YUATRAlias $request, YUATAlias $channel): RedirectResponse
     {
         // Put all 'is_favorite' to 'no' before update
-        if ($channel->is_favorite == YUATAlias::IS_FAVORITE_YES) {
+        if ($request->is_favorite == YUATAlias::IS_FAVORITE_YES) {
             YUATAlias::query()->update(['is_favorite' => YUATAlias::IS_FAVORITE_NO]);
         }
         // Save the new value
@@ -74,5 +77,18 @@ class YoutubeUploadAccessTokenController
         $result = $channel->delete();
 
         return redirect()->route('youtubeupload.index')->with('status', 'delete-youtube-channel-success');
+    }
+
+    public function info(YUATAlias $channel): View
+    {
+        $ytc = new YoutubeInfoController();
+        $channeldetails = $ytc->getInfoChannel($channel);
+        // détection du type de retour
+        if ($channeldetails instanceof Exception) {
+            return view('youtubeupload.error', ['message' => $channeldetails->getMessage()]);
+        }
+        if ($channeldetails instanceof ChannelListResponse) {
+            return view('youtubeupload.info', ['channel' => $channel, 'channeldetails' => $channeldetails]);
+        }
     }
 }

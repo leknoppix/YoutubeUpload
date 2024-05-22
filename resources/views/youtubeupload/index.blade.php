@@ -23,32 +23,34 @@
             </thead>
             <tbody class="bg-gray-200">
             @foreach($channels as $channel)
-            <tr class="bg-white border-4 border-gray-200 text-center">
-                <td class="px-16 py-2 flex align-center">
-                    @if($channel->is_favorite == "yes")
-                        @include('youtubeupload.elements.favorite')
-                    @endif
-                    {{ $channel->channel_name }}
-                </td>
-                <td class="px-16 py-2">
-                    {{ $channel->updated_at }}
-                </td>
-                <td class="px-16 py-2 flex justify-center gap-4">
-                    <button onclick="alert('Liste des vidéos uploadées')" class="text-green-500 hover:text-green-700">
-                        @include('youtubeupload.elements.show')
-                    </button>
-                    <a href="{{ route('youtubeupload.edit', $channel) }}" class="text-blue-500 hover:text-blue-700">
-                        @include('$youtubeupload.elements.edit')
-                    </a>
-                    <form id="deleteForm_{{ $channel['id'] }}" action="{{ route('youtubeupload.destroy', $channel) }}" method="post">
-                        @csrf
-                        @method('delete')
-                        <button onclick="return confirmUrlDelete({{ $channel['id'] }})" class="text-red-500 hover:text-red-700">
-                            @include('youtubeupload.elements.delete')
-                        </button>
-                    </form>
-                </td>
-            </tr>
+                <tr class="bg-white border-4 border-gray-200 text-center">
+                    <td class="px-16 py-2 flex align-center">
+                        @if($channel->is_favorite == "yes")
+                            @include('youtubeupload.elements.favorite')
+                        @endif
+                        {{ $channel->channel_name }}
+                    </td>
+                    <td class="px-16 py-2">
+                        {{ $channel->updated_at }}
+                    </td>
+                    <td class="px-16 py-2 flex justify-center gap-4">
+                        <a href="{{ route('youtubeupload.info', $channel) }}" class="text-blue-500 hover:text-blue-700">
+                            @include('youtubeupload.elements.info')
+                        </a>
+                        <a href="{{ route('youtubeupload.edit', $channel) }}" class="text-blue-500 hover:text-blue-700">
+                            @include('youtubeupload.elements.edit')
+                        </a>
+                        <form id="deleteForm_{{ $channel['id'] }}"
+                              action="{{ route('youtubeupload.destroy', $channel) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button onclick="return confirmUrlDelete({{ $channel['id'] }})"
+                                    class="text-red-500 hover:text-red-700">
+                                @include('youtubeupload.elements.delete')
+                            </button>
+                        </form>
+                    </td>
+                </tr>
             @endforeach
             <!-- Ajoutez plus de lignes ici -->
             </tbody>

@@ -11,4 +11,6 @@ Route::prefix($prefix)->middleware(['web'])->group(function () {
         ->parameters(['youtubeupload' => 'channel']);
     Route::get('youtubeupload/callback', [YoutubeUploadAccessTokenController::class, 'callback'])
         ->name('youtubeupload.callback');
+    Route::get('youtubeupload/{channel}/info/', [YoutubeUploadAccessTokenController::class, 'info'])
+        ->name('youtubeupload.info');
 });
