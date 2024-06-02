@@ -3,7 +3,7 @@
 namespace Leknoppix\YoutubeUpload\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Leknoppix\YoutubeUpload\YoutubeUploadServiceProvider;
+use Leknoppix\YoutubeUpload\Providers\YoutubeUploadServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra

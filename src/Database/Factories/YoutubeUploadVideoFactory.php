@@ -21,14 +21,14 @@ class YoutubeUploadVideoFactory extends Factory
     {
         return [
             'title' => $this->faker->title,
-            'description' => $this->faker->text(500),
+            'channel_id' => $this->faker->randomNumber(),
+            'description' => $this->faker->text(5),
             'videoId' => $this->faker->uuid,
             'url' => $this->faker->url,
             'is_published' => $this->faker->boolean,
             'is_owner' => $this->faker->boolean,
             'videocategory_id' => $this->faker->randomNumber(),
             'user_id' => $this->faker->randomNumber(),
-            'validation_id' => $this->faker->randomNumber(),
         ];
     }
 }

@@ -2,6 +2,6 @@
 
 return [
     'providers' => [
-        Leknoppix\YoutubeUpload\YoutubeUploadServiceProvider::class,
+        Leknoppix\YoutubeUpload\Providers\YoutubeUploadServiceProvider::class,
     ],
 ];

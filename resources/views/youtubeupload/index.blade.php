@@ -34,10 +34,15 @@
                         {{ $channel->updated_at }}
                     </td>
                     <td class="px-16 py-2 flex justify-center gap-4">
-                        <a href="{{ route('youtubeupload.info', $channel) }}" class="text-blue-500 hover:text-blue-700">
+                        @if($channel->get_video_list == "no")
+                            <a href="{{ route('youtubeupload.getvideoonyoutube', $channel) }}" class="text-blue-500 hover:text-blue-700">
+                                @include('youtubeupload.elements.info')
+                            </a>
+                        @endif
+                        <a href="{{ route('youtubeupload.info', $channel) }}" class="text-blue-500 hover:text-blue-700" title="Récupérer les informations de la chaine">
                             @include('youtubeupload.elements.info')
                         </a>
-                        <a href="{{ route('youtubeupload.edit', $channel) }}" class="text-blue-500 hover:text-blue-700">
+                        <a href="{{ route('youtubeupload.edit', $channel) }}" class="text-blue-500 hover:text-blue-700" title="Modifier les informations de la chaine">
                             @include('youtubeupload.elements.edit')
                         </a>
                         <form id="deleteForm_{{ $channel['id'] }}"
@@ -45,6 +50,7 @@
                             @csrf
                             @method('delete')
                             <button onclick="return confirmUrlDelete({{ $channel['id'] }})"
+                                    title="Supprimer cette chaine de la liste"
                                     class="text-red-500 hover:text-red-700">
                                 @include('youtubeupload.elements.delete')
                             </button>

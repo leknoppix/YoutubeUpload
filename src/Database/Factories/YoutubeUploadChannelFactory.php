@@ -8,7 +8,7 @@ use Leknoppix\YoutubeUpload\Models\YoutubeUploadAccessToken;
 /**
  * @extends Factory<YoutubeUploadAccessToken>
  */
-class YoutubeUploadAccessTokenFactory extends Factory
+class YoutubeUploadChannelFactory extends Factory
 {
     protected $model = YoutubeUploadAccessToken::class;
 
@@ -21,8 +21,9 @@ class YoutubeUploadAccessTokenFactory extends Factory
     {
         return [
             'channel_name' => $this->faker->company,
-            'channel_id' => $this->faker->uuid,
-            'access_token' => $this->faker->uuid,
+            'channel_YT_id' => $this->faker->uuid,
+            'is_favorite' => 'no',
+            'get_video_list' => 'no',
         ];
     }
 }

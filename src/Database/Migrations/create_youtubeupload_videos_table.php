@@ -15,19 +15,18 @@ return new class extends Migration
     {
         Schema::create('youtubeupload_videos', function (Blueprint $table) {
             $table->id();
-            $table->integer('access_token_id');
-            $table->foreign('access_token_id')->references('id')->on('youtubeupload_access_tokens');
+            $table->foreignId('channel_id')->constrained('youtubeupload_channel')->onDelete('cascade');
             $table->string('title');
             $table->longText('description')->nullable();
-            $table->string('videoId')->nullable();
+            $table->string('videoId')->nullable()->unique();
             $table->string('url')->nullable();
-            $table->tinyInteger('is_published')->nullable();
-            $table->tinyInteger('is_owner')->nullable();
+            $table->string('urlimage')->nullable();
+            $table->string('duration')->nullable()->default('0');
+            $table->tinyInteger('is_published')->nullable(); // 0 = not published, 1 = published, 2 = private
+            $table->tinyInteger('is_owner')->nullable(); // 0 = not owner, 1 = owner
+            $table->tinyInteger('validation')->nullable(); //
             $table->integer('videocategory_id')->nullable();
-            $table->integer('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('validation_id')->nullable();
-            $table->foreign('validation_id')->references('id')->on('users');
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -5,48 +5,31 @@ namespace Leknoppix\YoutubeUpload\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class YoutubeUploadAccessToken extends Model
 {
     use HasFactory;
 
-    const IS_FAVORITE_YES = 'yes';
-
-    const IS_FAVORITE_NO = 'no';
-
-    protected $table = 'youtubeupload_access_token';
+    protected $table = 'youtubeupload_access_tokens';
 
     protected $guarded = [];
 
-    protected string $access_token;
-
-    /**
-     * @return string|array<string, int|string>
-     */
-    public function getAccessTokenAttribute(): string|array
-    {
-        return $this->attributes['access_token'];
-    }
+    public string $access_token = '';
 
     protected string $channel_id;
 
-    public function getChannelIdAttribute(): string
+    /**
+     * @return BelongsTo<YoutubeUploadChannel, YoutubeUploadAccessToken>
+     */
+    public function channel(): BelongsTo
     {
-        return $this->attributes['channel_id'];
-    }
-
-    protected string $is_favorite;
-
-    public function getIsFavoriteAttribute(): string
-    {
-        return $this->attributes['is_favorite'];
+        return $this->belongsTo(YoutubeUploadChannel::class, 'channel_id');
     }
 
     protected $fillable = [
         'channel_id',
-        'channel_name',
         'access_token',
-        'is_favorite',
     ];
 
     /**

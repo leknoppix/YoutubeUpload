@@ -4,7 +4,6 @@ namespace Leknoppix\YoutubeUpload\Http\Controllers\Auth;
 
 use Google_Client;
 use Google_Service_YouTube;
-use Leknoppix\YoutubeUpload\Models\YoutubeUploadAccessToken as YUATAlias;
 
 class YoutubeConnexionController
 {
@@ -47,8 +46,6 @@ class YoutubeConnexionController
 
     /**
      * @return array<string, int|string>
-     *
-     * @throws \Google\Service\Exception
      */
     public function getInformation(string $code): array
     {
@@ -69,23 +66,8 @@ class YoutubeConnexionController
      */
     public function getToken(string $code): ?array
     {
-        /* old method depreciated */
-        // $this->client->authenticate($code);
         $this->client->fetchAccessTokenWithAuthCode($code);
 
         return $this->client->getAccessToken();
-    }
-
-    /**
-     * Refresh the access token of the specified channel id
-     */
-    public function refreshToken(YUATAlias $channel): void
-    {
-        $this->client->setAccessToken($channel->access_token);
-        if ($this->client->isAccessTokenExpired()) {
-            $refreshToken = $this->client->getRefreshToken();
-            $accessToken = $this->client->fetchAccessTokenWithRefreshToken($refreshToken);
-            $channel->update(['access_token' => $accessToken]);
-        }
     }
 }

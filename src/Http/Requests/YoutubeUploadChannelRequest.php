@@ -3,9 +3,9 @@
 namespace Leknoppix\YoutubeUpload\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Leknoppix\YoutubeUpload\Models\YoutubeUploadAccessToken;
+use Leknoppix\YoutubeUpload\Models\YoutubeUploadChannel;
 
-class YoutubeUploadAccessTokenRequest extends FormRequest
+class YoutubeUploadChannelRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +23,8 @@ class YoutubeUploadAccessTokenRequest extends FormRequest
     public function rules(): array
     {
         $isfavorite = implode(',', [
-            YoutubeUploadAccessToken::IS_FAVORITE_YES,
-            YoutubeUploadAccessToken::IS_FAVORITE_NO,
+            YoutubeUploadChannel::IS_FAVORITE_YES,
+            YoutubeUploadChannel::IS_FAVORITE_NO,
         ]);
 
         return [

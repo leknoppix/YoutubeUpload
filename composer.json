@@ -39,7 +39,7 @@
     "autoload": {
         "psr-4": {
             "Leknoppix\\YoutubeUpload\\": "src/",
-            "Leknoppix\\YoutubeUpload\\Database\\Factories\\": "database/factories/"
+            "Leknoppix\\YoutubeUpload\\Database\\Factories\\": "src/Database/Factories/"
         }
     },
     "autoload-dev": {
@@ -77,7 +77,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Leknoppix\\YoutubeUpload\\YoutubeUploadServiceProvider"
+                "Leknoppix\\YoutubeUpload\\Providers\\YoutubeUploadServiceProvider"
             ],
             "aliases": {
                 "NewYoutube": "Leknoppix\\YoutubeUpload\\Facades\\YoutubeUpload"
