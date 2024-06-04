@@ -6,6 +6,10 @@ use Leknoppix\YoutubeUpload\Http\Controllers\YoutubeUploadChannelController;
 
 $prefix = config('youtubeupload.prefix');
 
+Route::get('/', function () {
+    return 'coucou';
+});
+
 Route::prefix($prefix)->middleware(['web'])->group(function () {
     Route::resource('youtubeupload', YoutubeUploadChannelController::class)
         ->except('show', 'create', 'store', 'add')

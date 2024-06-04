@@ -41,8 +41,8 @@ class YoutubeUploadChannel extends Model
     }
 
     protected $fillable = [
-        'channel_YT_id',
         'channel_name',
+        'channel_YT_id',
         'is_favorite',
     ];
 

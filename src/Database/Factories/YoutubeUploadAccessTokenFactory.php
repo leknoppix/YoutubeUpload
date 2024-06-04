@@ -4,6 +4,7 @@ namespace Leknoppix\YoutubeUpload\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Leknoppix\YoutubeUpload\Models\YoutubeUploadAccessToken;
+use Leknoppix\YoutubeUpload\Models\YoutubeUploadChannel;
 
 /**
  * @extends Factory<YoutubeUploadAccessToken>
@@ -20,7 +21,7 @@ class YoutubeUploadAccessTokenFactory extends Factory
     public function definition(): array
     {
         return [
-            'channel_id' => $this->faker->uuid,
+            'channel_id' => YoutubeUploadChannel::factory(),
             'access_token' => $this->faker->uuid,
         ];
     }

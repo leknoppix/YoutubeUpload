@@ -10,9 +10,9 @@ class YoutubeUploadVideo extends Model
 {
     use HasFactory;
 
-    public int $user_id;
+    // public int $user_id;
 
-    public int $channel_id;
+    // public int $channel_id;
 
     /**
      * @return BelongsTo<YoutubeUploadChannel, YoutubeUploadVideo>

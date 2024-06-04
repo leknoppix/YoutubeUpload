@@ -14,6 +14,7 @@ class YoutubeUploadServiceProvider extends PackageServiceProvider
     public function boot(): void
     {
         $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
+        $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations');
 
         View::addNamespace('youtubeupload', __DIR__.'/../../resources/views');
     }

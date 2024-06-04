@@ -156,7 +156,7 @@ pest-coverage: ## Run tests with coverage.
 #---------------------------------------------#
 
 ## === ⭐  OTHERS =================================================
-before-commit: formatage analyse qa-phpstan testspest ## Run before commit.
+before-commit: formatage analyse qa-phpstan tests ## Run before commit.
 .PHONY: before-commit
 
 first-install: composer-install npm-install npm-build laravel-start ## First install.
