@@ -1,35 +1,64 @@
 <?php
 
-namespace Leknoppix\YoutubeUpload\Tests\Unit\Factories;
+namespace Leknoppix\YoutubeUpload\Tests\Unit\Database\Factory;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+use Leknoppix\YoutubeUpload\Database\Factories\YoutubeUploadChannelFactory;
 use Leknoppix\YoutubeUpload\Models\YoutubeUploadAccessToken;
 use Leknoppix\YoutubeUpload\Tests\TestCase;
 
 class YoutubeUploadChannelFactoryTest extends TestCase
 {
     use RefreshDatabase;
-    use WithFaker;
+    use RefreshDatabase;
 
-    public function testYoutubeUploadAccessTokenFactoryCreatesValidYoutubeUploadAccessToken()
+    /**
+     * Test que la factory crée un modèle valide
+     *
+     * @return void
+     */
+    public function test_youtube_upload_channel_factory_creates_valid_model()
     {
-        $channel_id = $this->faker->uuid;
-        $access_token = $this->faker->uuid;
-        $accessTokenData = [
-            'channel_id' => $channel_id,
-            'access_token' => $access_token,
-        ];
-        // Crée un access token à l'aide de la factory
-        $youtubeUploadAccessToken = YoutubeUploadAccessToken::create($accessTokenData);
+        // Utilisation de la factory pour créer un modèle en mémoire
+        $channel = (new YoutubeUploadChannelFactory())->make();
 
-        // Vérifie que l'access token possède le bon modèle
-        $this->assertInstanceOf(YoutubeUploadAccessToken::class, $youtubeUploadAccessToken);
+        $this->assertInstanceOf(YoutubeUploadAccessToken::class, $channel);
+        $this->assertNotEmpty($channel->channel_name);
+        $this->assertNotEmpty($channel->channel_YT_id);
+        $this->assertEquals('no', $channel->is_favorite);
+        $this->assertEquals('no', $channel->get_video_list);
+    }
 
-        // Vérifie que l'access token possède un channel_id
-        $this->assertNotNull($youtubeUploadAccessToken->getAttribute('channel_id'));
+    public function test_definition_method_generates_valid_data()
+    {
+        $factory = new YoutubeUploadChannelFactory();
+        $definitions = $factory->definition();
 
-        // Vérifie que l'access token possède un access_token
-        $this->assertNotNull($youtubeUploadAccessToken->getAttribute('access_token'));
+        $this->assertIsArray($definitions);
+        $this->assertIsString($definitions['channel_name']);
+        $this->assertIsString($definitions['channel_YT_id']);
+        $this->assertEquals('no', $definitions['is_favorite']);
+        $this->assertEquals('no', $definitions['get_video_list']);
+    }
+
+    /**
+     * Test que les champs générés par la factory sont corrects
+     *
+     * @return void
+     */
+    public function test_youtube_upload_channel_factory_creates_correct_fields()
+    {
+        // Utilisation de la factory pour créer un modèle en mémoire
+        $channel = (new YoutubeUploadChannelFactory())->make();
+
+        $this->assertIsString($channel->channel_name);
+        $this->assertIsString($channel->channel_YT_id);
+        $this->assertIsString($channel->is_favorite);
+        $this->assertIsString($channel->get_video_list);
+
+        // Vérifie que les champs ont des valeurs valides
+        $this->assertMatchesRegularExpression('/^[\w-]+$/', $channel->channel_YT_id);
+        $this->assertContains($channel->is_favorite, ['yes', 'no']);
+        $this->assertContains($channel->get_video_list, ['yes', 'no']);
     }
 }

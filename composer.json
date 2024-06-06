@@ -39,8 +39,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Leknoppix\\YoutubeUpload\\": "src/",
-            "Leknoppix\\YoutubeUpload\\Database\\Factories\\": "src/Database/Factories/"
+            "Leknoppix\\YoutubeUpload\\": "src/"
         }
     },
     "autoload-dev": {

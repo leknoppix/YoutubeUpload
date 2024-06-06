@@ -34,8 +34,8 @@ class YoutubeUploadServiceProvider extends PackageServiceProvider
         ], 'youtubeupload-commands');
         $this->publishes([
             __DIR__.'/../Database/Migrations' => database_path('migrations'),
-            __DIR__.'/../Database/Factories' => database_path('factories'),
-            __DIR__.'/../Database/Seeders' => database_path('seeders'),
+            // __DIR__.'/../Database/Factories' => database_path('factories'),
+            // __DIR__.'/../Database/Seeders' => database_path('seeders'),
         ], 'youtubeupload-migrations');
         $this->publishes([
             __DIR__.'/../../config/youtubeupload.php' => config_path('youtubeupload.php'),
