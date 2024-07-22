@@ -4,11 +4,22 @@ namespace Leknoppix\YoutubeUpload\Tests\Unit\Database\Factory;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Leknoppix\YoutubeUpload\Database\Factories\YoutubeUploadVideoFactory;
+use Leknoppix\YoutubeUpload\Models\YoutubeUploadVideo;
 use Leknoppix\YoutubeUpload\Tests\TestCase;
 
 class YoutubeUploadVideoFactoryTest extends TestCase
 {
     use RefreshDatabase;
+
+    public function test_video_factory()
+    {
+        $video = YoutubeUploadVideo::factory()->make();
+
+        $this->assertNotNull($video->getAttribute('channel_id'));
+        $this->assertNotEmpty($video->getAttribute('title'));
+        $this->assertNotEmpty($video->getAttribute('description'));
+        $this->assertNotEmpty($video->getAttribute('videoId'));
+    }
 
     public function testDefinitionMethod(): void
     {

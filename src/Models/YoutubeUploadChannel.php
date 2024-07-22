@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Leknoppix\YoutubeUpload\Database\Factories\YoutubeUploadChannelFactory;
 
 class YoutubeUploadChannel extends Model
 {
@@ -23,6 +24,11 @@ class YoutubeUploadChannel extends Model
     protected string $channel_YT_id;
 
     protected string $is_favorite;
+
+    protected static function newFactory(): YoutubeUploadChannelFactory
+    {
+        return YoutubeUploadChannelFactory::new();
+    }
 
     /**
      * @return HasMany<YoutubeUploadVideo>

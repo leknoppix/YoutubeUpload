@@ -25,4 +25,12 @@ class MigrationTest extends TestCase
         // Assurez-vous que la table a été supprimée
         $this->assertFalse(Schema::hasTable('youtubeupload_videos'));
     }
-}
+
+    public function test_creation_all_database_tables()
+    {
+        Artisan::call('migrate');
+        $this->assertTrue(Schema::hasTable('youtubeupload_videos'));
+        $this->assertTrue(Schema::hasTable('youtubeupload_channel'));
+        $this->assertTrue(Schema::hasTable('youtubeupload_access_tokens'));
+    }
+    }

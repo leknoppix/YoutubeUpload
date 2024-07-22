@@ -3,14 +3,14 @@
 namespace Leknoppix\YoutubeUpload\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Leknoppix\YoutubeUpload\Models\YoutubeUploadAccessToken;
+use Leknoppix\YoutubeUpload\Models\YoutubeUploadChannel;
 
 /**
- * @extends Factory<YoutubeUploadAccessToken>
+ * @extends Factory<YoutubeUploadChannel>
  */
 class YoutubeUploadChannelFactory extends Factory
 {
-    protected $model = YoutubeUploadAccessToken::class;
+    protected $model = YoutubeUploadChannel::class;
 
     /**
      * Define the model's default state.

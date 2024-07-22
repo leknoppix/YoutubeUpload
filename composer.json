@@ -46,7 +46,6 @@
         "psr-4": {
             "Leknoppix\\YoutubeUpload\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/",
-            "Leknoppix\\YoutubeUpload\\Database\\Factories\\": "src/Database/Factories/",
             "Tests\\": "tests/"
         }
     },

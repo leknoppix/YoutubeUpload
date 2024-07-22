@@ -2,8 +2,8 @@
 
 namespace Leknoppix\YoutubeUpload\Providers;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\View;
+use Leknoppix\YoutubeUpload\Database\FactoryWrapper;
 use Leknoppix\YoutubeUpload\Facades\YoutubeUpload;
 use Leknoppix\YoutubeUpload\Services\TokenService;
 use Spatie\LaravelPackageTools\Package;
@@ -21,7 +21,7 @@ class YoutubeUploadServiceProvider extends PackageServiceProvider
 
     protected function registerFactories(): void
     {
-        Factory::useNamespace('\Leknoppix\YoutubeUpload\Database\Factories');
+        FactoryWrapper::useNamespace('\Leknoppix\YoutubeUpload\Database\Factories');
     }
 
     public function register(): void

@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Leknoppix\YoutubeUpload\Database\Factories\YoutubeUploadAccessTokenFactory;
 
 class YoutubeUploadAccessToken extends Model
 {
@@ -18,6 +19,11 @@ class YoutubeUploadAccessToken extends Model
     public string $access_token = '';
 
     protected string $channel_id;
+
+    protected static function newFactory(): YoutubeUploadAccessTokenFactory
+    {
+        return YoutubeUploadAccessTokenFactory::new();
+    }
 
     /**
      * @return BelongsTo<YoutubeUploadChannel, YoutubeUploadAccessToken>
