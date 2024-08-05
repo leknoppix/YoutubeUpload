@@ -33,4 +33,4 @@ class MigrationTest extends TestCase
         $this->assertTrue(Schema::hasTable('youtubeupload_channel'));
         $this->assertTrue(Schema::hasTable('youtubeupload_access_tokens'));
     }
-    }
+}

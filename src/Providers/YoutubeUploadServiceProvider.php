@@ -27,7 +27,7 @@ class YoutubeUploadServiceProvider extends PackageServiceProvider
     public function register(): void
     {
         $this->app->singleton(TokenService::class, function ($app) {
-            return new TokenService();
+            return new TokenService;
         });
         $this->publishes([
             __DIR__.'/../Commands' => base_path('app/Console/Commands'),

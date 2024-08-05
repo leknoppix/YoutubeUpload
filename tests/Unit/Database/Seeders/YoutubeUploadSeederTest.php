@@ -15,7 +15,7 @@ class YoutubeUploadSeederTest extends TestCase
 
     public function test_seed_data_generation()
     {
-        $seeder = new YoutubeUploadSeeder();
+        $seeder = new YoutubeUploadSeeder;
         $seeder->run();
 
         $this->assertEquals(10, YoutubeUploadChannel::count());

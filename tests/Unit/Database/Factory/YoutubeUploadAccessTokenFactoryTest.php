@@ -22,7 +22,7 @@ class YoutubeUploadAccessTokenFactoryTest extends TestCase
     /** @test */
     public function it_can_produce_valid_definition_for_youtube_upload_access_token_model()
     {
-        $youtubeAccessTokenFactory = new YoutubeUploadAccessTokenFactory();
+        $youtubeAccessTokenFactory = new YoutubeUploadAccessTokenFactory;
         $definition = $youtubeAccessTokenFactory->definition();
 
         $this->assertArrayHasKey('channel_id', $definition);

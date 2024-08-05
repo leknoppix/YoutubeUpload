@@ -24,7 +24,7 @@ class YoutubeUploadVideoFactoryTest extends TestCase
     public function testDefinitionMethod(): void
     {
 
-        $factory = new YoutubeUploadVideoFactory();
+        $factory = new YoutubeUploadVideoFactory;
 
         $definition = $factory->definition();
 

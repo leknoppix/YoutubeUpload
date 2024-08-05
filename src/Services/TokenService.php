@@ -19,7 +19,7 @@ class TokenService
     {
         $this->youtube_client_id = is_string(config('youtubeupload.clientID')) ? config('youtubeupload.clientID') : '';
         $this->youtube_secret_id = is_string(config('youtubeupload.clientSecret')) ? config('youtubeupload.clientSecret') : '';
-        $this->client = new Google_Client();
+        $this->client = new Google_Client;
         $this->client->setClientId($this->youtube_client_id);
         $this->client->setClientSecret($this->youtube_secret_id);
     }

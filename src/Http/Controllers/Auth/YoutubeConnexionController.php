@@ -28,7 +28,7 @@ class YoutubeConnexionController
         $this->youtube_secret_id = is_string(config('youtubeupload.clientSecret')) ? config('youtubeupload.clientSecret') : '';
         $this->callback = config('app.url').'/'.config('youtubeupload.prefix').config('youtubeupload.callback');
         $this->scopes = ['https://www.googleapis.com/auth/youtube'];
-        $this->client = new Google_Client();
+        $this->client = new Google_Client;
         $this->client->setClientId($this->youtube_client_id);
         $this->client->setClientSecret($this->youtube_secret_id);
         $this->client->setRedirectUri($this->callback);

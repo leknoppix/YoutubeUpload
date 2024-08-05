@@ -16,7 +16,7 @@ class YoutubeUploadChannelController
     public function index(): View
     {
         $channels = YoutubeUploadChannel::orderBy('updated_at', 'desc')->get();
-        $link = new YoutubeConnexionController();
+        $link = new YoutubeConnexionController;
         $link = $link->connexion();
 
         return view('youtubeupload.index', compact('channels', 'link'));

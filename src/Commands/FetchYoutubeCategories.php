@@ -21,7 +21,7 @@ class FetchYoutubeCategories extends Command
     public function handle(): void
     {
         $apiKey = config('youtubeupload.developer_key');
-        $client = new Google_Client();
+        $client = new Google_Client;
         if (is_string($apiKey)) {
             $client->setDeveloperKey($apiKey);
         }

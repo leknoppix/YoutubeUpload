@@ -25,7 +25,7 @@ class GetinfoService
     {
         $this->youtube_client_id = is_string(config('youtubeupload.clientID')) ? config('youtubeupload.clientID') : '';
         $this->youtube_secret_id = is_string(config('youtubeupload.clientSecret')) ? config('youtubeupload.clientSecret') : '';
-        $client = new Google_Client();
+        $client = new Google_Client;
         $client->setClientId($this->youtube_client_id);
         $client->setClientSecret($this->youtube_secret_id);
         $accessTokenRecord = $channel->accesstokens()->first();

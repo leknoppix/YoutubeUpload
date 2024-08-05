@@ -89,7 +89,7 @@ class YoutubeUploadServiceProviderTest extends TestCase
 
     public function testConfigurePackageMethod()
     {
-        $package = new \Spatie\LaravelPackageTools\Package();
+        $package = new \Spatie\LaravelPackageTools\Package;
         $provider = new YoutubeUploadServiceProvider($this->app);
         $provider->configurePackage($package);
 
@@ -183,7 +183,7 @@ class YoutubeUploadServiceProviderTest extends TestCase
 
     public function test_configure_package_method()
     {
-        $package = new Package();
+        $package = new Package;
         $provider = new YoutubeUploadServiceProvider($this->app);
         $provider->configurePackage($package);
 

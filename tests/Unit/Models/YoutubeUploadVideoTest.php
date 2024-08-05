@@ -58,7 +58,7 @@ class YoutubeUploadVideoTest extends TestCase
             'user_id',
         ];
 
-        $video = new YoutubeUploadVideo();
+        $video = new YoutubeUploadVideo;
 
         $this->assertEquals($fillable, $video->getFillable());
     }

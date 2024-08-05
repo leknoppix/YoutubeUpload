@@ -31,7 +31,7 @@ class YoutubeUploadChannelFactoryTest extends TestCase
     public function test_youtube_upload_channel_factory_creates_valid_model()
     {
         // Utilisation de la factory pour créer un modèle en mémoire
-        $channel = (new YoutubeUploadChannelFactory())->make();
+        $channel = (new YoutubeUploadChannelFactory)->make();
 
         $this->assertInstanceOf(YoutubeUploadChannel::class, $channel);
         $this->assertNotEmpty($channel->getAttribute('channel_name'));
@@ -42,7 +42,7 @@ class YoutubeUploadChannelFactoryTest extends TestCase
 
     public function test_definition_method_generates_valid_data()
     {
-        $factory = new YoutubeUploadChannelFactory();
+        $factory = new YoutubeUploadChannelFactory;
         $definitions = $factory->definition();
 
         $this->assertIsArray($definitions);
@@ -60,7 +60,7 @@ class YoutubeUploadChannelFactoryTest extends TestCase
     public function test_youtube_upload_channel_factory_creates_correct_fields()
     {
         // Utilisation de la factory pour créer un modèle en mémoire
-        $channel = (new YoutubeUploadChannelFactory())->make();
+        $channel = (new YoutubeUploadChannelFactory)->make();
 
         $this->assertIsString($channel->getAttribute('channel_name'));
         $this->assertIsString($channel->getAttribute('channel_YT_id'));
